@@ -1,31 +1,13 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Menu, Play } from "lucide-react"
+import { ArrowRight, Menu, ImagePlus } from "lucide-react"
 import { LineShadowText } from "@/components/line-shadow-text"
 import { ShimmerButton } from "@/components/shimmer-button"
 import { useState } from "react"
 
 const works = [
-  {
-    id: 1,
-    title: "Монтаж для блогеров",
-    description: "YouTube, Reels, Shorts — динамичный монтаж под вашу аудиторию",
-    tag: "Блогинг",
-    image: "https://cdn.poehali.dev/projects/23e6a235-051f-4612-844e-9c880677a28d/files/162b25d6-a5c1-43b8-9b92-919fad1cb12d.jpg",
-  },
-  {
-    id: 2,
-    title: "Рекламные ролики",
-    description: "Продающие видео для соцсетей и рекламных кампаний",
-    tag: "Реклама",
-    image: "https://cdn.poehali.dev/projects/23e6a235-051f-4612-844e-9c880677a28d/files/6f3604dd-ec48-41c8-83cc-7b0b2590cbb3.jpg",
-  },
-  {
-    id: 3,
-    title: "Кино-монтаж",
-    description: "Атмосферные ролики с цветокоррекцией и саунд-дизайном",
-    tag: "Cinematic",
-    image: "https://cdn.poehali.dev/projects/23e6a235-051f-4612-844e-9c880677a28d/files/e8eb7450-3851-4a18-9959-a46c487f4f98.jpg",
-  },
+  { id: 1 },
+  { id: 2 },
+  { id: 3 },
 ]
 
 export default function Index() {
@@ -816,27 +798,14 @@ export default function Index() {
                 key={work.id}
                 className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-orange-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 cursor-pointer"
               >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src={work.image}
-                    alt={work.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-14 h-14 rounded-full bg-orange-500/90 backdrop-blur-sm flex items-center justify-center shadow-lg shadow-orange-500/40">
-                      <Play className="w-6 h-6 text-white fill-white ml-0.5" />
-                    </div>
-                  </div>
-                  <div className="absolute top-3 left-3">
-                    <span className="text-xs text-white bg-orange-500/80 backdrop-blur-sm px-3 py-1 rounded-full font-medium">
-                      {work.tag}
-                    </span>
-                  </div>
+                <div className="relative aspect-video overflow-hidden bg-white/5 flex flex-col items-center justify-center gap-2 border-b border-white/10">
+                  <ImagePlus className="w-8 h-8 text-white/20" />
+                  <span className="text-white/20 text-xs">Вставьте изображение или видео</span>
                 </div>
-                <div className="p-5 bg-white/5 backdrop-blur-sm">
-                  <h3 className="text-white font-semibold text-lg mb-1">{work.title}</h3>
-                  <p className="text-white/60 text-sm">{work.description}</p>
+                <div className="p-5 bg-white/5 backdrop-blur-sm flex flex-col gap-2">
+                  <div className="h-5 rounded bg-white/10 w-2/3" />
+                  <div className="h-3 rounded bg-white/5 w-full" />
+                  <div className="h-3 rounded bg-white/5 w-4/5" />
                 </div>
               </div>
             ))}
